@@ -29,7 +29,6 @@ pipeline {
                     changeCreationTimeOut: 3600,
                     changeStepTimeOut: 18000,
                     pollingInterval: 60,
-                    configurationName: 'Jenkins Win Server',  // nome da configuração no Jenkins
                     changeRequestDetails: '''{
                         "attributes": {
                             "short_description": "Deploy React App - Jenkins Pipeline",
