@@ -63,7 +63,7 @@ pipeline {
         }
         stage('Archive build artifacts') {
             steps {
-                archiveArtifacts artifacts: '.next/**', fingerprint: true
+                archiveArtifacts artifacts: '.next/**, node_modules/**', fingerprint: true
             }
         }
     }
