@@ -3,7 +3,6 @@ pipeline {
 
     tools {
         nodejs 'node' // nome configurado no Jenkins
-        sonarQubeScanner 'sonar' // nome cadastrado em Tools
     }
 
     stages {
@@ -22,7 +21,7 @@ pipeline {
         stage('Scan') {
             steps {
                 withSonarQubeEnv(installationName: 'sq') {
-                    bat "\"${scannerHome}\\bin\\sonar-scanner.bat\""
+                    bat 'sonar'
                 }
             }
         }
