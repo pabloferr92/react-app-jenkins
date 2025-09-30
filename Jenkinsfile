@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     tools {
-        nodejs "node" // nome configurado no Jenkins
+        nodejs 'node' // nome configurado no Jenkins
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', 
+                git branch: 'master',
                     url: 'https://github.com/pabloferr92/react-app-jenkins.git',
                     credentialsId: '5aeac2b9-cc45-4ca0-a4a1-83076370436f'
             }
@@ -16,6 +16,20 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 bat 'npm install'
+            }
+        }
+        stage('Scan') {
+            steps {
+                withSonarQubeEnv(installationName: 'sq') {
+                    bat 'sonar'
+                }
+            }
+        }
+        stage('Quality Gate') {
+            steps {
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
             }
         }
         stage('Build') {
