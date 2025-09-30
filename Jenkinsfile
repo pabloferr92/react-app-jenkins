@@ -42,10 +42,9 @@ pipeline {
                             "work_notes": "Gerado no pipeline",
                             "assignment_group": "a715cd759f2002002920bde8132e7018"
                         },
-                        "setCloseCode": false,
-                        "autoCloseChange": true
                     }'''
                 )
+                snDevOpsGetChangeNumber()
             }
         }
         stage('Archive build artifacts') {
