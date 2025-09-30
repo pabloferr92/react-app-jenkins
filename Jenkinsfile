@@ -21,7 +21,7 @@ pipeline {
         stage('Scan') {
             steps {
                 withSonarQubeEnv(installationName: 'sq') {
-                    bat 'sonar'
+                    bat '"C:\\sonarqube-25.9.0.112764\\bin\\windows-x86-64\\SonarService.bat"'
                 }
             }
         }
