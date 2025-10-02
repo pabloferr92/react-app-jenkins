@@ -45,7 +45,7 @@ pipeline {
                     pollingInterval: 60,
                     changeRequestDetails: '''{
                         "attributes": {
-                            "short_description": "Deploy React App - Jenkins Pipeline - Rep Commit",
+                            "short_description": "Deploy React App - Jenkins Pipeline - Apresentação ServiceNow DevOps",
                             "priority": "2",
                             "start_date": "2025-09-20 08:00:00",
                             "end_date": "2025-09-20 18:00:00",
